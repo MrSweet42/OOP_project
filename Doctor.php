@@ -14,7 +14,7 @@ class Doctor extends Person
 
     function inputElement($ind)
     {
-        echo "--------- \n";
+        echo "---------- \n";
         echo "Input doctor №" . $ind . "\n";
         parent::inputPerson();
         echo "Speciality: ";

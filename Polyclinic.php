@@ -16,10 +16,19 @@ class Polyclinic
     private $listDoctors = [];
 
 
-    public function __construct(Patient $newPatient, Doctor $newDoctor)
+    private function __construct(Patient $newPatient, Doctor $newDoctor)
     {
         $this->listPatients[] = $newPatient;
         $this->listDoctors[] = $newDoctor;
+    }
+
+    private static $instance = null;
+    public static function getInstance(Patient $newPatient, Doctor $newDoctor)
+    {
+        if (is_null(self::$instance))
+            self::$instance = new self($newPatient, $newDoctor);
+
+        return self::$instance;
     }
 
     function inputListPatient() {
@@ -50,7 +59,7 @@ class Polyclinic
     }
 
     function printListDoctor() {
-        echo "Count of doctors : " . $this->countDoctors . "\n";
+        echo "Count of doctors: " . $this->countDoctors . "\n";
         for ($i = 0; $i < $this->countDoctors; $i++) {
             $this -> listDoctors[$i] -> printElement($i+1);
         }
