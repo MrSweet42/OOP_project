@@ -50,7 +50,7 @@ class Polyclinic
     }
 
     function printListDoctor() {
-        echo "Count of doctors: " . $this->countDoctors . "\n";
+        echo "Count of doctors : " . $this->countDoctors . "\n";
         for ($i = 0; $i < $this->countDoctors; $i++) {
             $this -> listDoctors[$i] -> printElement($i+1);
         }

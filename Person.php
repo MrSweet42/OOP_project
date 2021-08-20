@@ -14,14 +14,14 @@ class Person
 
     function inputPerson()
     {
-        echo "Age: ";
+        echo "Age : ";
         $this->age = readline();
-        echo "Name: ";
+        echo "Name : ";
         $this->name = readline();
     }
     function printPerson()
     {
-        echo "Age: " . $this->age . "\n";
-        echo "Name: " . $this->name . "\n";
+        echo "Age : " . $this->age . "\n";
+        echo "Name : " . $this->name . "\n";
     }
 }

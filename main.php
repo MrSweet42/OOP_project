@@ -8,7 +8,7 @@ spl_autoload_register(function ($className)
 $patient = new Patient();
 $doctor = new Doctor();
 $hos = new Polyclinic($patient, $doctor);
-echo "--------- Input list of patients: ---------\n";
+echo "-------- Input list of patients: --------\n";
 $hos -> inputListPatient();
 echo "\n--------- Input list of doctors: ----------\n";
 $hos -> inputListDoctor();
