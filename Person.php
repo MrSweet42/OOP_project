@@ -21,7 +21,7 @@ class Person
     }
     function printPerson()
     {
-        echo "Age: " . $this->age . "\n";
-        echo "Name: " . $this->name . "\n";
+        echo $this->age . "\t\t";
+        echo $this->name . str_repeat(" ", 14-strlen($this->name));
     }
 }

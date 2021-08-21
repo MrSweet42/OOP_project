@@ -13,7 +13,7 @@ class Patient extends Person
 
     function inputElement($ind)
     {
-        echo "---------- \n";
+        echo "----------\n";
         echo "Patient №" . $ind . "\n";
         parent::inputPerson();
         echo "Illness: ";
@@ -22,9 +22,8 @@ class Patient extends Person
 
     function printElement($ind)
     {
-        echo "---------- \n";
-        echo "Patient №" . $ind . "\n";
+        echo $ind . "\t";
         parent::printPerson();
-        echo "Illness: " . $this->illness . "\n";
+        echo $this->illness . "\n";
     }
 }

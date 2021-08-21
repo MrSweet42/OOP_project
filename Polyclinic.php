@@ -22,6 +22,7 @@ class Polyclinic
         $this->listDoctors[] = $newDoctor;
     }
 
+    // Pattern Singletone
     private static $instance = null;
     public static function getInstance(Patient $newPatient, Doctor $newDoctor)
     {
@@ -51,17 +52,50 @@ class Polyclinic
         }
     }
 
-    function printListPatient() {
-        echo "Count of patients: " . $this->countPatients . "\n";
-        for ($i = 0; $i < $this->countPatients; $i++) {
-            $this -> listPatients[$i] -> printElement($i+1);
+    function printTitlePatients(){
+        echo "---- Patients ----\n";
+        echo "№:\t";
+        echo "Age:\t";
+        echo "Name:" . str_repeat(" ", 9);
+        echo "Illness:\n";
+    }
+
+    function printTitleDoctors(){
+        echo "---- Doctors ----\n";
+        echo "№:\t";
+        echo "Age:\t";
+        echo "Name:" . str_repeat(" ", 9);
+        echo "Specialty:\n";
+    }
+
+    function printDataBase() {
+        echo "Data Base:\n";
+
+        if ($this->countPatients != 0)
+        {
+            $this->printTitlePatients();
+            for ($i = 0; $i < $this->countPatients; $i++) {
+                $this -> listPatients[$i] -> printElement($i+1);
+            }
+            echo "Count of patients: " . $this->countPatients . "\n";
+        } else {
+            echo "Empty list of patients\n";
+        }
+
+        if ($this->countDoctors != 0)
+        {
+            $this->printTitleDoctors();
+            for ($i = 0; $i < $this->countDoctors; $i++) {
+                $this -> listDoctors[$i] -> printElement($i+1);
+            }
+            echo "Count of doctors: " . $this->countDoctors . "\n";
+        } else {
+            echo "Empty list of patients\n";
         }
     }
 
-    function printListDoctor() {
-        echo "Count of doctors: " . $this->countDoctors . "\n";
-        for ($i = 0; $i < $this->countDoctors; $i++) {
-            $this -> listDoctors[$i] -> printElement($i+1);
-        }
-    }
+
+
+
+
 }

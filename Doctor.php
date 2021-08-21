@@ -23,9 +23,8 @@ class Doctor extends Person
 
     public function printElement($ind)
     {
-        echo "---------- \n";
-        echo "Doctor №" . $ind . "\n";
+        echo $ind . "\t";
         parent::printPerson();
-        echo "Speciality: " . $this->speciality . "\n";
+        echo $this->speciality . "\n";
     }
 }
